@@ -9,7 +9,7 @@ const client = new Client({
 });
 
 client.once('ready', () => {
-  console.log(🤖 Bot conectado como ${client.user.tag});
+  console.log(`🤖 Bot conectado como ${client.user.tag}`);
 });
 
 client.on('messageCreate', message => {
