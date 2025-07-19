@@ -9,7 +9,7 @@ GatewayIntentBits.MessageContent
 });
 
 client.once('ready', () => {
-console.log(`🤖 Bot conectado como ${client.user.tag}`);
+ console.log(`🤖 Bot conectado como ${client.user.tag}`);
 
 // Aquí podés poner tu lógica que necesita estar activa al iniciar
 });
