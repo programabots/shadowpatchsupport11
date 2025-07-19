@@ -26,7 +26,7 @@ client.login(process.env.DISCORD_TOKEN);
 
 // Tu configuración personalizada (puede ir fuera si no se ejecuta automáticamente)
 const charModal = {}; // solo si lo necesitás arriba
-charModal.Modal(client, {
+(client, {
 guildID: "123456789012345678",
 categoryID: "111111111111111111",
 staffRole: "222222222222222222",
