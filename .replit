@@ -1,0 +1,31 @@
+language = "nodejs"
+run = "node ."
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[workflows]
+runButton = "Run Discord Bot"
+
+[[workflows.workflow]]
+name = "Run Discord Bot"
+author = 35641747
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node ."
+
+[[workflows.workflow]]
+name = "Project"
+mode = "sequential"
+author = 35641747
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Run Discord Bot"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pip install discord.py && python main.py"
