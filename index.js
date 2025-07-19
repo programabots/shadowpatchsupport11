@@ -5,9 +5,15 @@ Odd Coder Discord: https://discord.gg/7KtdeePrHV
 Odd Coder Youtube: https://www.youtube.com/channel/UCwsiWQMSomXFjWWpRQbc35A
 Thanks for using our coded bot.
 */
-const Discord = require('discord.js');
-const allIntents = new Discord.Intents(32767);
-const client = new Discord.Client({
+const { Client, GatewayIntentBits } = require('discord.js');
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ]
+});
   messageCacheLifetime: 60,
   fetchAllMembers: false,
   messageCacheMaxSize: 10,
