@@ -12,7 +12,7 @@ client.once('ready', () => {
   console.log(`🤖 Bot conectado como ${client.user.tag}`);
 });
 
-client.on('messageCreate', message => {
+client.on('messageCreate', (message) => {
   if (message.content === '!ping') {
     message.channel.send('Pong!');
   }
