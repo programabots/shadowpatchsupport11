@@ -1,43 +1,24 @@
-/*
-Created With char-mod-mail Package.
-Created By Odd Coder.
-Odd Coder Discord: https://discord.gg/7KtdeePrHV
-Odd Coder Youtube: https://www.youtube.com/channel/UCwsiWQMSomXFjWWpRQbc35A
-Thanks for using our coded bot.
-*/
 const { Client, GatewayIntentBits } = require('discord.js');
 
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.MessageContent
   ]
 });
-  messageCacheLifetime: 60,
-  fetchAllMembers: false,
-  messageCacheMaxSize: 10,
-  restTimeOffset: 0,
-  restWsBridgetimeout: 100,
-  allowedMentions: {
-    parse: ["roles", "users", "eveoryone"],
-    repliedUser: true,
-  },
-  partials: ["MESSAGE", "CHANNEL", "REACTION"],
-  intents: allIntents,
+
+client.once('ready', () => {
+  console.log(🤖 Bot conectado como ${client.user.tag});
 });
 
-client.login(process.env.TOKEN);
-const express = require('express')
-const app = express();
-const port = 3000
-app.get('/', (req, res) => res.send('Odd is better.'))
-app.listen(port, () =>
-console.log(`Your app is listening a http://localhost:${port}`)
-);
-const charModMail = require('char-mod-mail');
-client.on("ready", () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+client.on('messageCreate', message => {
+  if (message.content === '!ping') {
+    message.channel.send('Pong!');
+  }
+});
+
+client.login(process.env.DISCORD_TOKEN);
 
   //Important Changing Area
 charModMail.ModMail(client, {
